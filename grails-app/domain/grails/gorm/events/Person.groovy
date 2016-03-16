@@ -6,8 +6,12 @@ class Person {
 
     transient List<Place> getPlaces() {
         List<Place> places = []
-        Place.findAllByPerson(this).each {
-            places << it
+        try {
+            Place.findAllByPerson(this).each {
+                places << it
+            }
+        } catch(Exception e){
+            log.error("grails 3.1.2 bug")
         }
         places
     }
