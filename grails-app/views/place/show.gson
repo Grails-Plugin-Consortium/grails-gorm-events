@@ -1,0 +1,7 @@
+import grails.gorm.events.Place
+
+model {
+	Place place
+}
+
+json tmpl.place(place)

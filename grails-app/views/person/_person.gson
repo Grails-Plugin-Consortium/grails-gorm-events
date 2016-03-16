@@ -1,0 +1,11 @@
+import grails.gorm.events.Person
+import grails.gorm.events.Place
+
+model {
+	Person person
+}
+
+json {
+	name person.name
+	places person.getPlaces().collect { Place place -> place.name }
+}

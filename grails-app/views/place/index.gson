@@ -1,0 +1,8 @@
+import grails.gorm.events.Place
+
+model {
+	Iterable<Place> placeList
+}
+
+json tmpl.place(placeList ?: [])
+
